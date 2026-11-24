@@ -1,0 +1,102 @@
+###
+POST http://127.0.0.1:8000/register/
+Content-Type: application/json
+
+{
+    "username": "arya",
+    "email": "arya@gmail.com",
+    "password": "arya@123"
+}
+
+###
+GET http://127.0.0.1:8000/users/
+Accept: application/json
+
+###
+POST http://127.0.0.1:8000/categories/
+Content-Type: application/json
+
+{
+    "category_name": "Music Concert",
+    "description": "Live music and entertainment events"
+}
+
+###
+GET http://127.0.0.1:8000/categories/
+Accept: application/json
+
+###
+GET http://127.0.0.1:8000/categories/2/
+
+###
+PUT http://127.0.0.1:8000/categories/1/
+Content-Type: application/json
+
+{
+    "category_name": "Wedding Events",
+    "description": "All wedding related events"
+}
+
+###
+DELETE http://127.0.0.1:8000/categories/1/
+
+###
+GET http://127.0.0.1:8000/events/
+Authorization: Basic amritha:amritha@123
+
+###
+POST http://127.0.0.1:8000/events/
+Content-Type: application/json
+Authorization: Basic amritha:amritha@123
+
+{
+    "event_name": "Wedding Celebration",
+    "description": "A grand wedding event",
+    "category": 2,
+    "event_date": "2026-12-20",
+    "event_time": "18:00:00",
+    "venue": "Kochi",
+    "ticket_price": "500.00",
+    "total_tickets": 100,
+    "available_tickets": 100
+}
+
+###
+GET http://127.0.0.1:8000/events/1/
+Authorization: Basic amritha:amritha@123
+
+
+###
+PUT http://127.0.0.1:8000/events/1/
+Content-Type: application/json
+Authorization: Basic amritha:amritha@123
+
+{
+    "event_name": "Grand Wedding Celebration",
+    "description": "A premium wedding celebration",
+    "category": 2,
+    "event_date": "2026-12-25",
+    "event_time": "19:00:00",
+    "venue": "Kochi",
+    "ticket_price": "750.00",
+    "total_tickets": 150,
+    "available_tickets": 150
+}
+
+###
+DELETE http://127.0.0.1:8000/events/1/
+Authorization: Basic amritha:amritha@123
+
+###
+GET http://127.0.0.1:8000/events/category/2/
+Authorization: Basic amritha:amritha@123
+
+
+###
+GET http://127.0.0.1:8000/events/date/2026-12-25/
+Authorization: Basic amritha:amritha@123
+
+
+###
+GET http://127.0.0.1:8000/events/search/?search=wedding
+Authorization: Basic amritha:amritha@123
